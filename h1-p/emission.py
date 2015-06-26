@@ -3,6 +3,8 @@
 def compute_emission(x, y, countsfile):
 	num = 0
 	den = 0
+	
+
 	with open(countsfile) as f1:
 		for line in f1:
 			line = line.rstrip('\n')
