@@ -28,10 +28,10 @@ def unigram_tagger(countsfile, inputfile, outputfile):
 						em = emission.compute_emission(line, y, countsfile)
 					else:
 						em = emission.compute_emission("_RARE_", y, countsfile)
-					print line
-					print y
-					print em
-					a = raw_input()
+					#print line
+					#print y
+					#print em
+					#a = raw_input()
 					if em > best:
 						
 						best = em
