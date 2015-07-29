@@ -89,7 +89,14 @@ if __name__ == "__main__":
 			if line in trained_words:
 				sentence.append(line)
 			else:
-				sentence.append("_RARE_")
+				if any(char.isdigit() for char in line):
+					sentence.append("_NUMERIC_")
+				elif line.isupper():
+					sentence.append("_ALLCAPITALS_")
+				elif line[-1].isupper():
+					sentence.append("_LASTCAPITAL_")
+				else:
+					sentence.append("_RARE_")
 			actual.append(line)
 	f1.close()
 	f2.close()
